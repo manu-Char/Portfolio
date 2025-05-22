@@ -4,7 +4,7 @@
 ## ⚠️ Note About This Repository
 
 🚧 **This repository contains a non-functional version of my portfolio.**  
-We are currently working on fixing some issues, and this version may not run as expected.
+   I am currently working on fixing some issues, and this version may not run as expected.
 🔍 This repo is meant to help **explore the structure and resources** used in my personal portfolio project.
 
 ✅ If you're looking for the **working version of my website**, you can find it on my GitHub under the repository name:  
