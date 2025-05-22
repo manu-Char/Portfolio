@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manmath's Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="port.css" />
+    <style>
+      /* Color palette */
+      :root {
+        --primary: #182359; /* Deep blue */
+        --secondary: #2053c1; /* Lighter blue */
+        --accent: #3b5998; /* Changed from orange to blue */
+        --light: #ffffff; /* Off-white */
+        --dark: #1a1a1a; /* Almost black */
+        --gray: #a7a5a5; /* Medium gray */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--primary);
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--light);
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.9);
+        z-index: 1000;
+        transition: 0.3s ease;
+      }
+
+      nav.scrolled {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        color: var(--light);
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .name {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .profession {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--secondary);
+      }
+
+      .header-text {
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--light);
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        border: 2px solid var(--accent);
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+
+      .btn:hover {
+        background-color: transparent;
+        color: var(--accent);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--light);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--light);
+        color: var(--dark);
+      }
+
+      section {
+        padding: 40px 5%;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: var(--accent);
+        bottom: -10px;
+        left: 25%;
+      }
+
+      .section-title p {
+        color: var(--gray);
+        font-size: 1.1rem;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .about-img {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 30px;
+      }
+
+      .about-img img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        color: var(--dark);
+      }
+
+      .skills {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .skills .section-title h2 {
+        color: var(--light);
+      }
+
+      .skills .section-title p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+
+      .skill-box {
+        flex-basis: 45%;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+      }
+
+      .skill-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .skill-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .skill-icon {
+        background-color: #5e82f7; /* Brighter blue color */
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.5rem;
+        color: white; /* Ensure icon color is white for visibility */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Add glow effect */
+      }
+
+      .skill-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .skill-bar {
+        width: 100%;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        margin-top: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skill-per {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: var(--accent);
+        border-radius: 10px;
+        width: 0;
+        transition: 2s;
+      }
+
+      .education {
+        background-color: var(--light);
+      }
+
+      .education-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 40px 0;
+      }
+
+      .education-container::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: var(--gray);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+
+      .education-item {
+        position: relative;
+        width: 50%;
+        padding: 20px 40px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .education-item::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: var(--accent);
+        border: 4px solid var(--primary);
+        border-radius: 50%;
+        top: 20px;
+        z-index: 1;
+      }
+
+      .education-item.left {
+        left: 0;
+      }
+
+      .education-item.right {
+        left: 50%;
+      }
+
+      .education-item.left::after {
+        right: -14px;
+      }
+
+      .education-item.right::after {
+        left: -14px;
+      }
+
+      .education-date {
+        color: var(--gray);
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      .education-title {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .education-desc {
+        margin-bottom: 0;
+      }
+
+      .projects {
+        background-color: #e6eeff; /* Light blue background */
+      }
+
+      .project-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .project-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s;
+      }
+
+      .project-card:hover .project-img img {
+        transform: scale(1.1);
+      }
+
+      .project-content {
+        padding: 20px;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .project-desc {
+        color: var(--gray);
+        margin-bottom: 15px;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+
+      .tech-tag {
+        background-color: rgba(42, 59, 144, 0.1);
+        color: var(--primary);
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      .project-links a {
+        color: var(--accent);
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .contact {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: var(--light);
+      }
+
+      .contact .section-title h2 {
+        color: var(--light);
+      }
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 30px;
+      }
+
+      .contact-info p {
+        margin-bottom: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .contact-icon {
+        background-color: var(--accent);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+
+      .contact-details h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .contact-details p {
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--light);
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      textarea.form-control {
+        height: 120px;
+        resize: none;
+      }
+
+      .submit-btn {
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: var(--secondary);
+      }
+
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      .social-links {
+        margin-bottom: 20px;
+      }
+
+      .social-links a {
+        color: var(--light);
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--accent);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        color: var(--gray);
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 992px) {
+        .name {
+          font-size: 3rem;
+        }
+
+        .skill-box {
+          flex-basis: 100%;
+        }
+
+        .education-container::after {
+          left: 31px;
+        }
+
+        .education-item {
+          width: 100%;
+          padding-left: 80px;
+          padding-right: 25px;
+        }
+
+        .education-item.right {
+          left: 0;
+        }
+
+        .education-item.left::after,
+        .education-item.right::after {
+          left: 15px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background-color: rgba(26, 26, 26, 0.95);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: 0.5s;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .nav-links li {
+          margin: 15px 0;
+        }
+
+        .hamburger {
+          display: block;
+          font-size: 1.5rem;
+          color: var(--light);
+        }
+
+        .name {
+          font-size: 2.5rem;
+        }
+
+        .profession {
+          font-size: 1.2rem;
+        }
+
+        .header-text {
+          font-size: 1rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .contact-info {
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .name {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="#" class="logo">My<span> Portfolio</span></a>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header id="home">
+      <div class="header-content">
+        <h1 class="name">Manmath Arvind Bharde</h1>
+        <h2 class="profession">Diploma Student In Computer Engineering</h2>
+        <p class="header-text">
+          Motivated student interested in programming, web development, and
+          cybersecurity, seeking opportunities to grow and gain experience.
+        </p>
+        <div>
+          <a href="#contact" class="btn">Contact Me</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </header>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2><b>About Me</b></h2>
+          <p>Get to know me better</p>
+        </div>
+        <div class="about-content">
+          <div class="about-img">
+            <img src="Portfolio_img.png" alt="Manmath's profile picture" />
+          </div>
+          <div class="about-text">
+            <h3>I'm Manmath, a Computer Engineering Student</h3>
+            <p>
+              Enthusiastic and dedicated Diploma student in Computer Engineering
+              with a strong foundation in programming, web development, and
+              cybersecurity. Eager to secure an internship opportunity where I
+              can apply my technical knowledge, gain practical experience, and
+              contribute meaningfully within a collaborative, learning-focused
+              environment.
+            </p>
+            <p>
+              Possess strong communication skills and a proven ability to work
+              effectively in team settings. A quick learner with solid
+              problem-solving abilities, I thrive in dynamic environments and
+              adapt quickly to emerging technologies and challenges.
+            </p>
+            <p>
+              Currently based in Latur, Maharashtra, I am passionate about
+              leveraging technology to address real-world problems and committed
+              to continuously expanding my technical skill set.
+            </p>
+
+            <a href="#contact" class="btn">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2><b>My Skills</b></h2>
+          <p>What I bring to the table</p>
+        </div>
+        <div class="skill-container">
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="skill-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3 class="skill-name">Programming Languages</h3>
+            </div>
+            <ul
+              style="
+                list-style-type: disc;
+                padding-left: 20px;
+                color: white;
+                margin-bottom: 15px;
+              "
+            >
+              <li>C/C++</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>MySQL-Database Management</li>
+              <li>HTML, CSS, JS</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="skill-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="skill-name">Cybersecurity</h3>
+            </div>
+            <ul
+              style="
+                list-style-type: disc;
+                padding-left: 20px;
+                color: white;
+                margin-bottom: 15px;
+              "
+            >
+              <li>Security Awareness</li>
+              <li>Network security basics</li>
+              <li>Safe internet practices</li>
+              <li>Basic Experience with KALI LINUX (OS)</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="skill-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3 class="skill-name">Tools &amp; Platforms</h3>
+            </div>
+            <ul
+              style="
+                list-style-type: disc;
+                padding-left: 20px;
+                color: white;
+                margin-bottom: 15px;
+              "
+            >
+              <li>Visual Studio Code</li>
+              <li>Turbo C/C++</li>
+              <li>Github</li>
+              <li>Oracle Database</li>
+              <li>MS Office (Word, Excel, PowerPoint)</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <div class="skill-title">
+              <div class="skill-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="skill-name">Soft Skills</h3>
+            </div>
+            <ul
+              style="
+                list-style-type: disc;
+                padding-left: 20px;
+                color: white;
+                margin-bottom: 15px;
+              "
+            >
+              <li>Leadership</li>
+              <li>Teamwork</li>
+              <li>Problem Solving</li>
+              <li>Communication Skills</li>
+              <li>Quick Learner</li>
+              <li>Adaptability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="education">
+      <div class="container">
+        <div class="section-title">
+          <h2><b>Education</b></h2>
+          <p>My academic journey</p>
+        </div>
+        <div
+          style="
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--accent);
+          "
+        >
+          <div style="display: flex; align-items: center; margin-bottom: 20px">
+            <div
+              style="
+                background-color: var(--primary);
+                color: white;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+              "
+            >
+              <i class="fas fa-graduation-cap" style="font-size: 24px"></i>
+            </div>
+            <h3 style="color: var(--primary); margin: 0; font-size: 1.5rem">
+              Education
+            </h3>
+          </div>
+
+          <div
+            style="
+              background-color: #f8f9fa;
+              padding: 15px;
+              border-radius: 8px;
+              margin-bottom: 15px;
+              border-left: 3px solid var(--secondary);
+            "
+          >
+            <h4 style="color: var(--primary); margin-bottom: 5px">
+              Diploma in Computer Engineering
+            </h4>
+            <p
+              style="color: var(--accent); font-weight: 600; margin-bottom: 5px"
+            >
+              MDA Institute of Polytechnic, Kolpa, Latur-413512
+            </p>
+            <p
+              style="
+                color: var(--gray);
+                font-style: italic;
+                margin-bottom: 10px;
+              "
+            >
+              Present
+            </p>
+            <p>
+              I am currently focused on developing my technical skills and
+              gaining in-depth knowledge in computing. <br />I am actively
+              learning new technologies, programming languages, and practical
+              applications to build a strong foundation for my future career in
+              the field.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2><b>Projects</b></h2>
+          <p>Some of my recent work</p>
+        </div>
+        <div class="project-container">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="wicon.jpg" alt="Weather_Icon" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Weather24</h3>
+              <p class="project-desc">
+                A weather forecasting web app that helps to get the live weather
+                report of any city by using the OpenWeatherAPI.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://manu-char.github.io/Weather24/" target="_blank"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+                <a href="https://github.com/manu-Char/Weather24" target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Userpfp.png" alt="Portfolio_Icon" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-desc">
+                A responsive personal portfolio website showcasing my skills,
+                projects and education. Built with clean design principles and
+                modern web standards.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+                <a href="#" target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get In Touch</h2>
+          <p>Let's connect</p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <p>
+              Feel free to reach out to me for any inquiries or opportunities.
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision.
+            </p>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>
+                  Om Hamne Paradise, <br />
+                  Old RTO Office, Latur – 413512, Maharashtra, India
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>manmath.bharde01@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+91 9673502989</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a
+            href="https://www.linkedin.com/in/manmath-bharde-a1432626b"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://github.com/manu-Char" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.instagram.com/manmath.bharde" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <p class="copyright">
+          &copy; 2024 Manmath Bharde. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
