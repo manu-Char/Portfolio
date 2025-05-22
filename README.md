@@ -1,41 +1,24 @@
-# 👋 Manmath Arvind Bharde
 
-Hi! I’m **Manmath Bharde**, a Diploma student in Computer Engineering from Latur, Maharashtra.
-This portfolio highlights my skills, education, projects, and how to get in touch.
+⚡This repository is intended **only for viewing portfolio resources** in a **simple and organized format**.
 
-## 👨‍💻 About Me
-Enthusiastic and dedicated student passionate about programming, web development, and cybersecurity. Eager to gain internship experience and contribute in collaborative environments. Quick learner with strong problem-solving and communication skills.
+## ⚠️ Note About This Repository
 
-## 🛠 Skills
-- **Languages:** C/C++, Python, Java, MySQL, HTML, CSS, JavaScript  
-- **Cybersecurity:** Network basics, security awareness, Kali Linux (basic)  
-- **Tools:** VS Code, Turbo C/C++, GitHub, Oracle DB, MS Office  
-- **Soft Skills:** Leadership, teamwork, adaptability, communication
+🚧 **This repository contains a non-functional version of my portfolio.**  
+We are currently working on fixing some issues, and this version may not run as expected.
+🔍 This repo is meant to help **explore the structure and resources** used in my personal portfolio project.
 
-## 🎓 Education
-**Diploma in Computer Engineering**  
-*MDA Institute of Polytechnic, Kolpa, Latur* — *Present*  
-Focused on building technical skills and industry knowledge.
+✅ If you're looking for the **working version of my website**, you can find it on my GitHub under the repository name:  
+👉 [`my-portfolio`](https://github.com/manu-Char/my-portfolio)
 
-## 🚀 Projects
-
-### 🌦 Weather24  
-A weather app providing live forecasts via OpenWeatherAPI.  
-**Technologies:** HTML, CSS, JavaScript  
-🔗 [Live Demo](https://manu-char.github.io/Weather24/)  
-💻 [Source Code](https://github.com/manu-Char/Weather24)
-
-### 🧑‍💼 Personal Portfolio Website  
-A responsive personal portfolio site to showcase my skills, projects, and contact info. Designed using Figma and built with clean, accessible code.  
-**Technologies:** HTML, CSS, JavaScript  
-🔗 [Live Demo](https://manu-char.github.io/portfolio/)  
-💻 [Source Code](https://github.com/manu-Char/portfolio)
+⚠️ Please note:  
+- The **live code in `my-portfolio`** is functional but **not well-structured** for reading.  
+- JavaScript files are **split into chunks**, which might make it harder to understand the code flow directly.  
+- Apologies for any inconvenience caused!
 
 ## 📫 Contact
 Feel free to reach out for projects, ideas, or opportunities!
 - 📍 Latur, Maharashtra  
 - ✉️ [manmath.bharde01@gmail.com](mailto:manmath.bharde01@gmail.com)  
 - 📞 +91 9673502989
-
+- 
 © 2025 Manmath Arvind Bharde
-
