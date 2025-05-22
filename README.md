@@ -8,7 +8,7 @@ We are currently working on fixing some issues, and this version may not run as 
 🔍 This repo is meant to help **explore the structure and resources** used in my personal portfolio project.
 
 ✅ If you're looking for the **working version of my website**, you can find it on my GitHub under the repository name:  
-👉 [`my-portfolio`]((https://github.com/manu-Char/MyPortfolio)])
+👉 [`my-portfolio`]([(https://github.com/manu-Char/MyPortfolio)])
 
 ⚠️ Please note:  
 - The **live code in `my-portfolio`** is functional but **not well-structured** for reading.  
